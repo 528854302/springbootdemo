@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
     @Autowired
     UserService userService;
+
 //    跳转到登录页面
     @GetMapping("login")
     public String login(){

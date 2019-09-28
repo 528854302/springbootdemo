@@ -1,6 +1,6 @@
 package com.example.springbootdemo.dao;
 
-import com.example.springbootdemo.User;
+import com.example.springbootdemo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

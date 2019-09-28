@@ -1,4 +1,4 @@
-package com.example.springbootdemo;
+package com.example.springbootdemo.entity;
 
 public class User {
     private String userName;

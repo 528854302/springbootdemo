@@ -12,8 +12,9 @@ public class Controller {
 //        return "hello";
 //    }
 
-    @GetMapping("")
+//    跳转到主页
+    @GetMapping("index")
     public String hello(){
-        return "demo";
+        return "index";
     }
 }

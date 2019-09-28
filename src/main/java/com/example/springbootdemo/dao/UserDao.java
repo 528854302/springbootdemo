@@ -1,0 +1,21 @@
+package com.example.springbootdemo.dao;
+
+import com.example.springbootdemo.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public class UserDao {
+    @Autowired
+    JdbcTemplate template;
+    public List<User> findUser(String username,String password){
+        String sql = "SELECT * FROM user WHERE username=? and password=?";
+        return template.query(sql, new BeanPropertyRowMapper<User>(User.class),
+                username,
+                password);
+    }
+}

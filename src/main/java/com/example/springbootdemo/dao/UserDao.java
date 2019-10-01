@@ -12,6 +12,7 @@ import java.util.List;
 public class UserDao {
     @Autowired
     JdbcTemplate template;
+
     public List<User> findUser(String username,String password){
         String sql = "SELECT * FROM user WHERE username=? and password=?";
         return template.query(sql, new BeanPropertyRowMapper<User>(User.class),

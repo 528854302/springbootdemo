@@ -1,6 +1,6 @@
 package com.example.springbootdemo.dao;
 
-import com.example.springbootdemo.entity.User;
+import com.example.springbootdemo.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,14 +9,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class UserDao {
+public class ProductDao {
     @Autowired
     JdbcTemplate template;
-
-    public List<User> findUser(String username,String password){
-        String sql = "SELECT * FROM user WHERE sno=? and password=?";
-        return template.query(sql, new BeanPropertyRowMapper<User>(User.class),
-                username,
-                password);
+    public List<Product> findProduct(){
+        String sql="SELECT * FROM product";
+        return template.query(sql,new BeanPropertyRowMapper<Product>(Product.class));
     }
 }

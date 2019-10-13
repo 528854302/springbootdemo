@@ -25,12 +25,14 @@
 
     <div class="col-md-3" v-for="product in products">
         <div class="thumbnail" width="150px" high="150px">
-            <img v-bind:src="product.image" alt="">
-            <div class="caption">
-                <h3>{{product.pname}}</h3>
-                <p color="red">￥：{{product.price}}</p>
-                <p><a :href="'productInfo?pid=' +  product.pId" class="btn btn-primary" role="button">加入购物车</a></p>
-            </div>
+            <a :href="'productInfo?pid=' +  product.pId">
+                <img v-bind:src="product.image" alt="">
+                <div class="caption">
+                    <h3>{{product.pname}}</h3>
+                    <p color="red">￥：{{product.price}}</p>
+                    <p><a :href="'collect?pid=' +  product.pId" class="btn btn-primary" role="button">收藏</a></p>
+                </div>
+            </a>
         </div>
     </div>
 </div>

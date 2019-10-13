@@ -12,7 +12,7 @@ public class ProductSevice {
     @Autowired
     ProductDao productDao;
 
-    public List<Product> findProduct(){
-        return productDao.findProduct();
+    public List<Product> listProduct(){
+        return productDao.listProduct();
     }
 }

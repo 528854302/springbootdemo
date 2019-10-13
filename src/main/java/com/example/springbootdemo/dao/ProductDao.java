@@ -12,7 +12,7 @@ import java.util.List;
 public class ProductDao {
     @Autowired
     JdbcTemplate template;
-    public List<Product> findProduct(){
+    public List<Product> listProduct(){
         String sql="SELECT * FROM product";
         return template.query(sql,new BeanPropertyRowMapper<Product>(Product.class));
     }

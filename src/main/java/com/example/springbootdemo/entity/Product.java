@@ -5,13 +5,17 @@ import java.util.Date;
 public class Product {
     private String pId;
     private String pname;
+//    商品新旧程度
     private int level;
     private float price;
+//    商品分类 1表示数码电子
     private int category;
     private String pinfo;
+    //是否下架 1表示上架 0表示下架
     private int display;
     private String image;
     private String sno;
+//    发布用户学号
     private Date time;
 
     public String getpId() {

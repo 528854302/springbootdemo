@@ -23,7 +23,7 @@ public class ProductController {
     //@ResponseBody可以将list转为json
     @GetMapping("/product")
     public @ResponseBody List<Product> listProduct(){
-        List<Product> products = productSevice.findProduct();
+        List<Product> products = productSevice.listProduct();
         return products;
     }
 

@@ -50,7 +50,7 @@
         },
         methods:{
             findAll:function () {
-                var _this = this;//表面this是vue里的对象
+                var _this = this;//表明this是vue里的对象
                 axios.get('product')
                     .then(function (response) {
                         _this.products=response.data;

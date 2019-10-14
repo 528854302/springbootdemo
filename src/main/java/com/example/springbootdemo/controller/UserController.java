@@ -22,25 +22,28 @@ public class UserController {
 
 //    验证用户身份信息
     @RequestMapping(value = "checkUser",method = RequestMethod.POST)
-    public String check(String username, String password, Model model,
-                        HttpServletResponse response, boolean isRememberMe){
+    public String check(String sno, String password,Model model,
+                        HttpServletRequest request,
+            HttpServletResponse response, boolean isRememberMe){
         User user=new User();
-        user.setUserName(username);
+        user.setSno(sno);
         user.setPassword(password);
         List<User> users = userService.findUser(user);
         if (users.size()>0){
             if (isRememberMe){
-                Cookie cookie = new Cookie("username",users.get(0).getUserName());
+                Cookie cookie = new Cookie("username",users.get(0).getSno());
                 cookie.setMaxAge(60*60*6);
                 response.addCookie(cookie);
             }
+            request.getSession().setAttribute("user",users.get(0));
+
             return "index";
         }
         model.addAttribute("msg", "用户名或密码错误请重试！");
         return "login";
     }
 
-    //    验证用户身份信息
+    //    退出登录
     @RequestMapping(value = "logout")
     public String logout( HttpServletRequest request,HttpServletResponse response){
         Cookie[] cookies = request.getCookies();
@@ -50,6 +53,16 @@ public class UserController {
                 response.addCookie(cookie);
             };
         }
+        request.getSession().removeAttribute("user");
         return "/login";
     }
+
+//    注册
+    @GetMapping("/signupUser")
+    public String signupUser( HttpServletRequest request,HttpServletResponse response){
+
+        return "index";
+    }
+
+
 }

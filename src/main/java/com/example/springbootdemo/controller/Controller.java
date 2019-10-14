@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -55,6 +56,20 @@ public class Controller {
         return "login";
     }
 
+    //    跳转到注册页面
+    @GetMapping("/signup")
+    public String signup(HttpServletRequest request, HttpServletResponse response){
+
+        return "signup";
+    }
+
+
+
+
+    @GetMapping("test")
+    public String string(){
+        return "test";
+    }
 
 
 }

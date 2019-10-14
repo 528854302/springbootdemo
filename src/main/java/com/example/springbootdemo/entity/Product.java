@@ -8,7 +8,7 @@ public class Product {
 //    商品新旧程度
     private int level;
     private float price;
-//    商品分类 1表示数码电子
+//    商品分类 1表示数码电子，2表示服饰鞋包，3表示二手图书，4表示生活百货，5表示水果生鲜，6表示其他
     private int category;
     private String pinfo;
     //是否下架 1表示上架 0表示下架

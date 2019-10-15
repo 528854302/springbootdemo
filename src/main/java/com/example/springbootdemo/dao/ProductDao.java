@@ -23,4 +23,10 @@ public class ProductDao {
                 product.getPrice(),product.getCategory(),product.getPinfo(),product.getDisplay(),
                 product.getImage(),product.getTime(),product.getUser().getSno());
     }
+
+    public List<Product> findProductsByCondition(int start, int end) {
+        String sql = "SELECT * FROM product LIMIT ?,?";
+        return template.query(sql,new BeanPropertyRowMapper<Product>(Product.class),
+               start,end);
+    }
 }

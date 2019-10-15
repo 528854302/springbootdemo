@@ -84,6 +84,14 @@ public class ProductController {
     }
 
 
+    //查询轮播商品
+    @GetMapping("/lunbo")
+    public @ResponseBody List<Product> lunbo(){
+        List<Product> products = productService.lunboProduct(3);
+        return products;
+    }
+
+
 
 
 

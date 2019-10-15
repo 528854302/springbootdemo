@@ -23,12 +23,76 @@
 <div th:replace="header.html :: header "></div>
 
 
+<div class="container container-fluid">
+    <div class="row">
+        <div class="col-md-3" style=" padding: 20px;height: 300px;width: 200px;border:1px solid rgba(150,160,169,0.11);background-color: white;">
+            <div class="row">
+                <ol class="breadcrumb" style="background-color: white;">
+                    <li><a href="#">数码电子</a></li>
+                    <li><a href="#">服装鞋饰</a></li>
+                </ol>
+            </div>
+            <div class="row">
+                <ol class="breadcrumb" style="background-color: white;">
+                    <li><a href="#">二手图书</a></li>
+                    <li><a href="#">生活百货</a></li>
+                </ol>
+            </div>
+            <div class="row">
+                <ol class="breadcrumb" style="background-color: white;">
+                    <li><a href="#">生鲜水果</a></li>
+                    <li><a href="#">其他</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-6" style="background-color: rgba(11,165,228,0.15) ;margin-left:15px;height: 300px;border-radius: 80px;">
+            <div class="row">
+                <h1 style="text-align: center">NIT <span class="label label-info">易购</span> 二手交易网</h1>
+            </div>
+            <div class="row" >
+                <form class="form-inline" style="text-align: center;margin-top: 50px;" action="">
+                    <div class="form-group">
+                        <label for="exampleInputName2" style="font-size: 20px">搜索宝贝：</label>
+                        <input th:name="pname" style="height: 60px;width: 260px;border-top-left-radius: 20px;border-bottom-left-radius: 20px;" type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                    </div>
+                    <button style="height: 60px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;" type="submit" class="btn btn-info"><h4>搜索</h4></button>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-md-3"><!--轮播图-->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height: 300px;width: 250px;">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" id="lunbo">
+
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div></div>
+    </div>
+</div>
 
 
 
 
-<div id="app">
 
+<!--商品列表-->
+<div id="app" style="margin-top: 20px;">
     <div class="col-md-3" v-for="product in products">
         <div class="thumbnail">
             <a :href="'productInfo?pid=' +  product.pId">
@@ -42,7 +106,6 @@
         </div>
     </div>
 </div>
-
 <script type="text/javascript">
     var vm = new Vue({
         el:'#app',
@@ -69,7 +132,33 @@
         created:function () {
             this.findAll();
         }
+    });
 
+
+
+//轮播
+    $(function () {
+        $.get("lunbo", {}, function (data) {
+            var lis='<div class="item active">\n' +
+                '            <a href="/productinfo?pid='+data[0].pId+'"><img src="'+data[0].image+'" style="height: 300px;width: 250px;" ></a>\n' +
+                '            <div class="carousel-caption">\n' +
+                '            </div>\n' +
+                '        </div>';
+            for(var i=1;i<data.length;i++){
+                var li= '<div class="item">\n' +
+                    '            <a href="/productinfo?pid='+data[i].pId+'"><img src="'+data[i].image+'" style="height: 300px;width: 250px;" ></a>\n' +
+                    '            <div class="carousel-caption">\n' +
+                    '            </div>\n' +
+                    '        </div>';
+                lis+=li;
+            }
+            $("#lunbo").html(lis);
+        }, "json");
+    });
+//修改轮播时间间隔
+    $('.carousel').carousel({
+
+        interval: 500
 
     });
 

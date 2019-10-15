@@ -14,4 +14,6 @@ public class UserService {
     public List<User> findUser(User user){
         return userDao.findUser(user.getSno(),user.getPassword());
     }
+
+
 }

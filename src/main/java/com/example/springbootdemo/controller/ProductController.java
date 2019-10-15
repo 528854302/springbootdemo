@@ -64,7 +64,12 @@ public class ProductController {
         Long pid = new Date().getTime()+new Random().nextInt(1000);
         product.setpId(pid.toString() );
         product.setCategory(Integer.parseInt(category));
-        product.setPname(pname);
+        if (pname.length()>25){
+            pname.substring(0,25);
+        }
+        else {
+            product.setPname(pname);
+        }
         product.setDisplay(1);
         product.setLevel(Integer.parseInt(level));
         product.setPinfo(pinfo);
@@ -75,10 +80,10 @@ public class ProductController {
         user.setSno(sno);
         product.setUser(user);
         if (productService.addProduct(product)>0){
-            model.addAttribute("msg","添加商品成功");
+            model.addAttribute("msg","发布商品成功");
             return "info";
         }else {
-            model.addAttribute("msg","添加商品操作失败，请重试");
+            model.addAttribute("msg","发布商品操作失败，请重试");
             return "info";
         }
     }

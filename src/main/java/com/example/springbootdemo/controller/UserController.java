@@ -65,5 +65,10 @@ public class UserController {
         return "index";
     }
 
+    @GetMapping("/userInfo")
+    public String findUserInfo(){
+        return "userinfo";
+    }
+
 
 }

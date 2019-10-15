@@ -8,8 +8,8 @@ import java.util.stream.IntStream;
 public class Test {
     @org.junit.Test
     public void test(){
-        if (".jpg".equalsIgnoreCase(".jpg") || ".jpg".equalsIgnoreCase(".png")){
-            System.out.println("********");
-        }
+        String string = "1asdasdssadddddddasdsaddddddda";
+        String n =string.substring(0,3);
+        System.out.println(n);
     }
 }

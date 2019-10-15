@@ -45,7 +45,7 @@ public class UserController {
 
     //    退出登录
     @RequestMapping(value = "logout")
-    public String logout( HttpServletRequest request,HttpServletResponse response){
+    public String logout(Model model, HttpServletRequest request,HttpServletResponse response){
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies){
             if ("username".equals(cookie.getName())){
@@ -54,6 +54,7 @@ public class UserController {
             };
         }
         request.getSession().removeAttribute("user");
+        model.addAttribute("msg", "退出成功！");
         return "/login";
     }
 

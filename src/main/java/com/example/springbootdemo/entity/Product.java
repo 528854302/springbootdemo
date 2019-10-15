@@ -10,12 +10,12 @@ public class Product {
     private float price;
 //    商品分类 1表示数码电子，2表示服饰鞋包，3表示二手图书，4表示生活百货，5表示水果生鲜，6表示其他
     private int category;
+//    商品详情
     private String pinfo;
     //是否下架 1表示上架 0表示下架
     private int display;
     private String image;
-    private String sno;
-//    发布用户学号
+    private User user;
     private Date time;
 
     public String getpId() {
@@ -82,19 +82,19 @@ public class Product {
         this.image = image;
     }
 
-    public String getSno() {
-        return sno;
-    }
-
-    public void setSno(String sno) {
-        this.sno = sno;
-    }
-
     public Date getTime() {
         return time;
     }
 
     public void setTime(Date time) {
         this.time = time;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

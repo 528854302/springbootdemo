@@ -3,6 +3,7 @@ package com.example.springbootdemo.controller;
 import com.example.springbootdemo.entity.Product;
 import com.example.springbootdemo.entity.User;
 import org.springframework.ui.Model;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -64,10 +67,27 @@ public class Controller {
     }
 
 
+    //
+    @GetMapping("/toUploadProduct")
+    public String toLoadUpProduct(HttpServletRequest request,Model model){
+        User user = (User) request.getSession().getAttribute("user");
+        if (user==null){
+            model.addAttribute("msg","请先登录后重试!");
+            return "login";
+        }
+
+        return "uploadproduct";
+    }
+
+
 
 
     @GetMapping("test")
-    public String string(){
+    public String string(HttpServletRequest request) throws FileNotFoundException {
+
+        String path = new File(ResourceUtils.getURL("classpath:").getPath())+"\\static\\pimage\\";
+        System.out.println(path);
+
         return "test";
     }
 

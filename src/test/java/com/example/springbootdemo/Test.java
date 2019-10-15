@@ -7,8 +7,9 @@ import java.util.stream.IntStream;
 
 public class Test {
     @org.junit.Test
-    public void Test(){
-        Date id = new Date();
-        System.out.println(id);
+    public void test(){
+        if (".jpg".equalsIgnoreCase(".jpg") || ".jpg".equalsIgnoreCase(".png")){
+            System.out.println("********");
+        }
     }
 }

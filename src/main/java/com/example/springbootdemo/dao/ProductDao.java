@@ -16,4 +16,11 @@ public class ProductDao {
         String sql="SELECT * FROM product";
         return template.query(sql,new BeanPropertyRowMapper<Product>(Product.class));
     }
+
+    public int insertProduct(Product product) {
+        String sql = "INSERT INTO product(pid,pname,level,price,category,pinfo,display,Image,time,sno) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        return template.update(sql,product.getpId(),product.getPname(),product.getLevel(),
+                product.getPrice(),product.getCategory(),product.getPinfo(),product.getDisplay(),
+                product.getImage(),product.getTime(),product.getUser().getSno());
+    }
 }

@@ -21,12 +21,18 @@
 </head>
 <body style="background-color: rgb(239, 245, 246);">
 <div th:replace="header.html :: header "></div>
+
+
+
+
+
+
 <div id="app">
 
     <div class="col-md-3" v-for="product in products">
-        <div class="thumbnail" width="150px" high="150px">
+        <div class="thumbnail">
             <a :href="'productInfo?pid=' +  product.pId">
-                <img v-bind:src="product.image" alt="">
+                <img v-bind:src="product.image" style="width: 300px;height: 400px;overflow: hidden;">
                 <div class="caption">
                     <h3>{{product.pname}}</h3>
                     <p color="red">￥：{{product.price}}</p>

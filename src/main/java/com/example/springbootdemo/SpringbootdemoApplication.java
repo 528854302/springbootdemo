@@ -15,7 +15,7 @@ import javax.servlet.MultipartConfigElement;
 public class SpringbootdemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringbootdemoApplication.class, args);
-    }
+}
 
 
 

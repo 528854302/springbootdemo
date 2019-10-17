@@ -13,10 +13,10 @@ public class UserDao {
     @Autowired
     JdbcTemplate template;
 
-    public List<User> findUser(String username,String password){
-        String sql = "SELECT * FROM user WHERE username=? and password=?";
+    public List<User> findUser(String sno,String password){
+        String sql = "SELECT * FROM user WHERE sno=? and password=?";
         return template.query(sql, new BeanPropertyRowMapper<User>(User.class),
-                username,
+                sno,
                 password);
     }
 }

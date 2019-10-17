@@ -12,6 +12,8 @@ public class UserService {
     @Autowired
     UserDao userDao;
     public List<User> findUser(User user){
-        return userDao.findUser(user.getUserName(),user.getPassword());
+        return userDao.findUser(user.getSno(),user.getPassword());
     }
+
+
 }

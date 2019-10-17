@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" >
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,209 +15,174 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 <body style="background-color: rgb(239, 245, 246);">
 <div th:replace="header.html :: header "></div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-8" style="background-color: rgb(255, 255, 255);">
-                <div class="row">
-                    <ul class="nav nav-tabs">
-                        <li role="presentation" class="active"><a href="#">推荐</a></li>
-                        <li role="presentation"><a href="#">关注</a></li>
-                        <li role="presentation"><a href="#">热榜</a></li>
-                    </ul>
-                </div>
-                <a href="#">
-                    <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                        <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h3>
-                            <p>
-                                为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                                <a href="">阅读全文</a>
-                            </p>
-                            <button type="button" class="btn btn-info btn-md">
-                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                            </button>
-                            <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                            <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                            <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                    </div>
-                </a>
-                <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                    <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h3>
-                        <p>
-                            为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                            <a href="">阅读全文</a>
-                        </p>
-                        <button type="button" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                        </button>
-                        <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                </div>
-                <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                    <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h3>
-                        <p>
-                            为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                            <a href="">阅读全文</a>
-                        </p>
-                        <button type="button" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                        </button>
-                        <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                </div>
-                <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                    <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h3>
-                        <p>
-                            为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                            <a href="">阅读全文</a>
-                        </p>
-                        <button type="button" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                        </button>
-                        <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                </div>
-                <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                    <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h3>
-                        <p>
-                            为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                            <a href="">阅读全文</a>
-                        </p>
-                        <button type="button" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                        </button>
-                        <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                </div>
-                <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                    <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h3>
-                        <p>
-                            为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                            <a href="">阅读全文</a>
-                        </p>
-                        <button type="button" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                        </button>
-                        <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                </div>
-                <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                    <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h3>
-                        <p>
-                            为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                            <a href="">阅读全文</a>
-                        </p>
-                        <button type="button" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                        </button>
-                        <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                </div>
-                <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                    <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h3>
-                        <p>
-                            为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                            <a href="">阅读全文</a>
-                        </p>
-                        <button type="button" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                        </button>
-                        <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                </div>
-                <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                    <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h5>
-                        <p>
-                            为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                            <a href="">阅读全文</a>
-                        </p>
-                        <button type="button" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                        </button>
-                        <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                </div>
-                <div class="row" style="border:1px solid rgb(235, 235, 235);padding:20px;">
-                    <h3 style="font-weight: bolder;">打篮球有哪些一般人不知道的技巧?</h3>
-                        <p>
-                            为光： 技巧一：投不进传出去比抱怨球滑地板硬风太大强得多； 技巧二：普通人打比赛，能篮下打板的不突破，能突破的不投篮，能两分的不三分，能三分的，我劝你再...
-                            <a href="">阅读全文</a>
-                        </p>
-                        <button type="button" class="btn btn-info btn-md">
-                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 收藏
-                        </button>
-                        <span><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 114条评论</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 分享</span>
-                        <span><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 关注</span>
-                </div>
-            </div>
-            <div class="col-md-4" style="background-color: rgb(255, 255, 255);border:1px solid rgb(235, 235, 235);position: fixed;margin-left: 765px;">
-                <div class="row" style="padding: 40px;">
 
-                    <div class="btn-group" role="group" aria-label="...">
-                        <a type="button" href="#" class="btn btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>写回答</a>
-                        <a type="button" href="#" class="btn btn-default"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>写文章</a>
-                        <a type="button" href="#" class="btn btn-default"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>写想法</a>
-                    </div>
-                </div>
+<div class="container container-fluid">
+    <div class="row">
+        <div class="col-md-3" style=" padding: 20px;height: 300px;width: 200px;border:1px solid rgba(150,160,169,0.11);background-color: white;">
+            <div class="row">
+                <ol class="breadcrumb" style="background-color: white;">
+                    <li><a href="#">数码电子</a></li>
+                    <li><a href="#">服装鞋饰</a></li>
+                </ol>
             </div>
-            <div class="col-md-4" style="background-color: rgb(255, 255, 255);border:1px solid rgb(235, 235, 235);position: fixed;margin-left: 765px; margin-top: 120px;">
-                <ul class="nav nav-pills nav-stacked">
-                    <li role="presentation" style="border-bottom: 1px solid rgb(236, 233, 233)"><a href="#">我的收藏</a></li>
-                    <li role="presentation" style="border-bottom: 1px solid rgb(236, 233, 233)"><a href="#">我的草稿</a></li>
-                    <li role="presentation" style="border-bottom: 1px solid rgb(236, 233, 233)"><a href="#">我的主页</a></li>
-                    <li role="presentation" style="border-bottom: 1px solid rgb(236, 233, 233)"><a href="#">我关注的问题</a></li>
-                    <li role="presentation" style="border-bottom: 1px solid rgb(236, 233, 233)"><a href="#">我的消息</a></li>
-                    <li role="presentation" style="border-bottom: 1px solid rgb(236, 233, 233)"><a href="#">我的私信</a></li>
-                    <li role="presentation" ><a href="#">设置</a></li>
-                </ul>
+            <div class="row">
+                <ol class="breadcrumb" style="background-color: white;">
+                    <li><a href="#">二手图书</a></li>
+                    <li><a href="#">生活百货</a></li>
+                </ol>
             </div>
-            <div class="col-md-4" style="background-color: rgb(255, 255, 255);border:1px solid rgb(235, 235, 235);position: fixed;margin-left: 765px; margin-top: 425px;padding: 20px;">
-                <div><a href="#" style="color: darkgrey">版权所有</a></div>
-                <div><a href="#" style="color: darkgrey">侵权举报</a></div>
-                <div><a href="#" style="color: darkgrey">邮箱528854302@qq.com</a></div>
-                <div><a href="#" style="color: darkgrey">用户反馈</a></div>
-                <div><a href="#" style="color: darkgrey">联系我们© 2019 nit hub</a></div>
+            <div class="row">
+                <ol class="breadcrumb" style="background-color: white;">
+                    <li><a href="#">生鲜水果</a></li>
+                    <li><a href="#">其他</a></li>
+                </ol>
             </div>
         </div>
-        <div class="row">
-            <nav aria-label="Page navigation" style="margin-left: 20px;">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">6</a></li>
-                    <li><a href="#">7</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <div class="col-md-6" style="background-color: rgba(11,165,228,0.15) ;margin-left:15px;height: 300px;border-radius: 80px;">
+            <div class="row">
+                <h1 style="text-align: center">NIT <span class="label label-info">易购</span> 二手交易网</h1>
+            </div>
+            <div class="row" >
+                <form class="form-inline" style="text-align: center;margin-top: 50px;" action="">
+                    <div class="form-group">
+                        <label for="exampleInputName2" style="font-size: 20px">搜索宝贝：</label>
+                        <input th:name="pname" style="height: 60px;width: 260px;border-top-left-radius: 20px;border-bottom-left-radius: 20px;" type="text" class="form-control" id="exampleInputName2" placeholder="请输入名称">
+                    </div>
+                    <button style="height: 60px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;" type="submit" class="btn btn-info"><h4>搜索</h4></button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"><!--轮播图-->
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height: 300px;width: 250px;">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" id="lunbo">
+
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div></div>
+    </div>
+</div>
+
+
+
+
+<!--商品列表-->
+<div id="app" style="margin-top: 20px;">
+    <div class="col-md-3" v-for="product in products">
+        <div class="thumbnail">
+            <a :href="'productInfo?pid=' +  product.pId">
+                <img v-bind:src="product.image" style="width: 300px;height: 400px;overflow: hidden;">
+                <div class="caption">
+                    <h3>{{product.pname}}</h3>
+                    <p color="red">￥：{{product.price}}</p>
+                    <p><a :href="'collect?pid=' +  product.pId" class="btn btn-primary" role="button">收藏</a></p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
 
+
+<div class="container">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            product:{
+                pname:'',
+                pid:'',
+                image:'',
+                price:'',
+                category:'',
+            },
+            products:[]
+        },
+        methods:{
+            findAll:function () {
+                var _this = this;//表明this是vue里的对象
+                axios.get('product')
+                    .then(function (response) {
+                        _this.products=response.data;
+                        console.log(_this.products);
+                    })
+            }
+        },
+        created:function () {
+            this.findAll();
+        }
+    });
+
+
+
+//轮播
+    $(function () {
+        $.get("lunbo", {}, function (data) {
+            var lis='<div class="item active">\n' +
+                '            <a href="/productinfo?pid='+data[0].pId+'"><img src="'+data[0].image+'" style="height: 300px;width: 250px;" ></a>\n' +
+                '            <div class="carousel-caption">\n' +
+                '            </div>\n' +
+                '        </div>';
+            for(var i=1;i<data.length;i++){
+                var li= '<div class="item">\n' +
+                    '            <a href="/productinfo?pid='+data[i].pId+'"><img src="'+data[i].image+'" style="height: 300px;width: 250px;" ></a>\n' +
+                    '            <div class="carousel-caption">\n' +
+                    '            </div>\n' +
+                    '        </div>';
+                lis+=li;
+            }
+            $("#lunbo").html(lis);
+        }, "json");
+    });
+//修改轮播时间间隔
+    $('.carousel').carousel({
+
+        interval: 500
+
+    });
+
+</script>
 </body>
 </html>

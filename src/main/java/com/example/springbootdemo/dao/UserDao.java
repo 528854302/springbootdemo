@@ -19,4 +19,14 @@ public class UserDao {
                 sno,
                 password);
     }
+
+    public int insertUser(User user) {
+        String sql="insert into user (`sno`,`username`,`password`,`phonenumber`,`realname`,`marjoy`,`balance`) values (?,?,?,?,?,?,?)";
+        return template.update(sql,user.getSno(),user.getUsername(),user.getPassword(),user.getPhonenumber(),user.getRealname(),user.getMarjoy(),user.getBalance());
+    }
+
+    public List<User> findSellerByPid(String sno) {
+        String sql="select * from user where sno=?";
+        return template.query(sql,new BeanPropertyRowMapper<User>(User.class),sno);
+    }
 }

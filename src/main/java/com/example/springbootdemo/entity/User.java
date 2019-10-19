@@ -9,6 +9,12 @@ public class User {
     private String adress;
     private String marjoy;
 
+    public User(String sno) {
+        this.sno = sno;
+    }
+    public User() {
+    }
+
     public String getSno() {
         return sno;
     }

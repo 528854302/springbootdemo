@@ -15,7 +15,7 @@ public class Product {
     //是否下架 1表示上架 0表示下架
     private int display;
     private String image;
-    private User user;
+    private String sno;
     private Date time;
 
     public String getpId() {
@@ -90,11 +90,11 @@ public class Product {
         this.time = time;
     }
 
-    public User getUser() {
-        return user;
+    public String getSno() {
+        return sno;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setSno(String sno) {
+        this.sno = sno;
     }
 }

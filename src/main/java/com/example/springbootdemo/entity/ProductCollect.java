@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class ProductCollect {
     private String id;
-    private User user;
-    private Product product;
+    private String sno;
+    private String pid;
     private Date time;
 
     public String getId() {
@@ -16,20 +16,20 @@ public class ProductCollect {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public String getSno() {
+        return sno;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setSno(String sno) {
+        this.sno = sno;
     }
 
-    public Product getProduct() {
-        return product;
+    public String getPid() {
+        return pid;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setPid(String pid) {
+        this.pid = pid;
     }
 
     public Date getTime() {

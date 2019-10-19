@@ -1,7 +1,10 @@
 package com.example.springbootdemo.controller;
 
+import com.example.springbootdemo.entity.PageBean;
 import com.example.springbootdemo.entity.Product;
 import com.example.springbootdemo.entity.User;
+import com.example.springbootdemo.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,10 +32,10 @@ public class Controller {
 //    }
 
     //    跳转到主页
-    @GetMapping("index")
-    public String index(){
-        return "index";
-    }
+@Autowired
+ProductService productService;
+
+
 
 
     //    跳转到登录页面
@@ -59,12 +62,7 @@ public class Controller {
         return "login";
     }
 
-    //    跳转到注册页面
-    @GetMapping("/signup")
-    public String signup(HttpServletRequest request, HttpServletResponse response){
 
-        return "signup";
-    }
 
 
     //

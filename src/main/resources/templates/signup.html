@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>spring boot demo html</title>
+    <title>用户注册</title>
     <script src="js/jquery-3.3.1.js"></script>
 
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
@@ -21,6 +21,63 @@
 </head>
 <body style="background-color: rgb(239, 245, 246);">
 <div th:replace="header.html :: header "></div>
-注册页面
+
+
+
+<div class="container" style="background: url(image/bg.jpg) no-repeat;width: 92%;height: 550px;background-size: cover">
+    <div class="row">
+        <div class="col-md-6" >
+            <div style="font-size: 100px;color:rgb(96, 96, 218);">NIT 易购</div>
+            <div style="font-size: 20px;color:rgb(16, 16, 17);">用户注册</div>
+        </div>
+        <div class="col-md-6" style="margin-top: 30px">
+            <form class="form-horizontal" action="/signup" method="post" style="background-color: rgb(255, 255, 255);padding: 50px;border: 1px solid rgb(212, 209, 209);margin-top: 0px;">
+                <!--登录失败提示信息-->
+                <div id="errormsg" th:text="${msg}" style="color: red;text-align: center;"></div>
+                <div class="form-group" >
+                    <label for="input1" class="col-sm-2 control-label">学号</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="sno" class="form-control" id="input1" placeholder="请输入学号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="input2" class="col-sm-2 control-label">昵称</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="username" class="form-control" id="input2" placeholder="请输入昵称">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="input3" class="col-sm-2 control-label">真实姓名</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="realname" class="form-control" id="input3" placeholder="请输入真实姓名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="input4" class="col-sm-2 control-label">电话号码</label>
+                    <div class="col-sm-10">
+                        <input type="number" name="phonenumber" class="form-control" id="input4" placeholder="请输入电话号码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="input4" class="col-sm-2 control-label">专业</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="marjoy" class="form-control" id="input4" placeholder="请输入专业">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                    <div class="col-sm-10">
+                        <input type=text name="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">注册</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

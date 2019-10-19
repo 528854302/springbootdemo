@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,7 +38,7 @@ public class UserController {
             }
             request.getSession().setAttribute("user",users.get(0));
 
-            return "index";
+            return "redirect:/index";
         }
         model.addAttribute("msg", "用户名或密码错误请重试！");
         return "login";
@@ -59,11 +60,50 @@ public class UserController {
     }
 
 //    注册
-    @GetMapping("/signupUser")
-    public String signupUser( HttpServletRequest request,HttpServletResponse response){
-
-        return "index";
+    @PostMapping("/signup")
+    public String signupUser(String sno,String username,String realname,
+                             String phonenumber,String marjoy,String password,
+                             Model model,HttpServletRequest request){
+        if (sno==null||sno.equals("")){
+            model.addAttribute("msg","请输入学号");
+            return "signup";
+        }else if (username==null||username.equals("")){
+            model.addAttribute("msg","请输入昵称");
+            return "signup";
+        }else if (password==null||password.equals("")){
+            model.addAttribute("msg","请输入密码");
+            return "signup";
+        }
+        if (userService.findUser(new User(sno)).size()>0){
+            model.addAttribute("msg","该学号已被注册");
+            return "signup";
+        }
+        User user=new User();
+        user.setSno(sno);
+        user.setPassword(password);
+        user.setBalance(Float.parseFloat("10000"));
+        user.setMarjoy(marjoy);
+        user.setPhonenumber(phonenumber);
+        user.setRealname(realname);
+        user.setUsername(username);
+        if (userService.insertUser(user)>0){
+            model.addAttribute("msg","注册成功!请前往首页");
+            request.getSession().setAttribute("user",user);
+            return "info";
+        }
+        model.addAttribute("msg","注册失败，请重试");
+        return "signup";
     }
+
+    //    跳转到注册页面
+    @GetMapping("/signup")
+    public String signup(HttpServletRequest request, HttpServletResponse response){
+        return "signup";
+    }
+
+
+
+
 
     @GetMapping("/userInfo")
     public String findUserInfo(){

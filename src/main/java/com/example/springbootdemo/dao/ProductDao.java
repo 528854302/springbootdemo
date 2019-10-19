@@ -1,5 +1,6 @@
 package com.example.springbootdemo.dao;
 
+import com.example.springbootdemo.entity.PageBean;
 import com.example.springbootdemo.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -22,12 +23,23 @@ public class ProductDao {
         String sql = "INSERT INTO product(pid,pname,level,price,category,pinfo,display,Image,time,sno) VALUES (?,?,?,?,?,?,?,?,?,?)";
         return template.update(sql,product.getpId(),product.getPname(),product.getLevel(),
                 product.getPrice(),product.getCategory(),product.getPinfo(),product.getDisplay(),
-                product.getImage(),product.getTime(),product.getUser().getSno());
+                product.getImage(),product.getTime(),product.getSno());
     }
 
     public List<Product> findProductsByCondition(int start, int end) {
         String sql = "SELECT * FROM product LIMIT ?,?";
         return template.query(sql,new BeanPropertyRowMapper<Product>(Product.class),
                start,end);
+    }
+
+    public List<Product> queryProductByPage(PageBean<Product> pageBean) {
+        String sql="SELECT * FROM product LIMIT ?,?";
+        return template.query(sql,new BeanPropertyRowMapper<Product>(Product.class)
+                ,(pageBean.getPageNumber()-1)*12,pageBean.getPageSize());
+    }
+
+    public List<Product> findProductByPid(String pid) {
+        String sql="SELECT * FROM product WHERE pid=?";
+        return template.query(sql,new BeanPropertyRowMapper<Product>(Product.class),pid);
     }
 }
